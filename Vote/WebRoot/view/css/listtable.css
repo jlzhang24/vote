@@ -1,0 +1,135 @@
+﻿A:link {
+	COLOR: #007977; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #007977; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #007a77; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #007977
+}
+.contentTextStyle A:visited {
+	COLOR: #666666
+}
+.contentTextStyle A:link {
+	COLOR: #666666
+}
+.yaowenfenye A:visited {
+	COLOR: #666666
+}
+.mailTo A:visited {
+	COLOR: #666666
+}
+.fenyeBottom {
+	COLOR: #007a77; TEXT-ALIGN: center
+}
+.fenyeBottom A:active {
+
+}
+BODY {
+	MARGIN: 0px
+}
+TABLE {
+	MARGIN: 0px; BORDER-COLLAPSE: collapse; BORDER-SPACING: 0
+}
+TH {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.headerMenu {
+	FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: "新宋体"; BORDER-COLLAPSE: collapse
+}
+.headerMenu A:visited {
+	COLOR: #ffffff
+}
+.headerMenu A:link {
+	COLOR: #ffffff
+}
+.headerMenu A:hover {
+	COLOR: #ffffff
+}
+#mainTable {
+	WIDTH: 100%
+}
+#headTable {
+	BACKGROUND-IMAGE: url(../image/header_bg.gif); WIDTH: 100%; HEIGHT: 104px; TEXT-ALIGN: center
+}
+.headTopTd {
+	VERTICAL-ALIGN: top; TEXT-ALIGN: center
+}
+#headTopTable {
+	WIDTH: 950px; HEIGHT: 104px
+}
+.headTopTableTr1 {
+	HEIGHT: 69px; TEXT-ALIGN: right
+}
+.contentTD {
+	VERTICAL-ALIGN: top; TEXT-ALIGN: center
+}
+.content {
+	WIDTH: 950px; HEIGHT: 32px
+}
+.navTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #007977; FONT-FAMILY: "新宋体"; TEXT-ALIGN: right
+}
+.navContent {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #10827f; FONT-FAMILY: "新宋体"; TEXT-ALIGN: left
+}
+.navClose {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #10827f; FONT-FAMILY: "新宋体"; TEXT-ALIGN: left
+}
+.navClose A:link {
+	FONT-SIZE: 12px; COLOR: #10827f; FONT-FAMILY: "新宋体"; TEXT-ALIGN: left; TEXT-DECORATION: underline
+}
+.navClose A:visited {
+	FONT-SIZE: 12px; COLOR: #10827f; FONT-FAMILY: "新宋体"; TEXT-ALIGN: left; TEXT-DECORATION: underline
+}
+.contentTextStyle {
+	FONT-SIZE: 14px; COLOR: #666666; FONT-FAMILY: '宋体'
+}
+.yaowen {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: '宋体'
+}
+.yaowen1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #666666; FONT-FAMILY: '宋体'
+}
+.yaowen2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: '宋体'
+}
+.yaowen A:link {
+	COLOR: #666666
+}
+.yaowen A:visited {
+	COLOR: #666666
+}
+.yaowen A:hover {
+	COLOR: #007a77; TEXT-DECORATION: none
+}
+.yaowenDate {
+	COLOR: #007a77; TEXT-ALIGN: right
+}
+.yaowenTtle {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: '宋体'
+}
+.contentbottomStyle {
+	FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: '宋体'
+}
+.yaowenfenye {
+	FONT-SIZE: 14px; COLOR: #666666; FONT-FAMILY: '宋体'
+}
+.appl {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #007a77; FONT-FAMILY: '黑体'; TEXT-ALIGN: center; cmstitle: 20px
+}
+.applll {
+	FONT-SIZE: 13px; COLOR: #007977; FONT-FAMILY: '宋体'; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+.cmscontent {
+	FONT-SIZE: 14px; COLOR: #666666; LINE-HEIGHT: 1.8em; TEXT-ALIGN: left
+}
+.hbox {
+	BORDER-RIGHT: #b4b4b4 1px solid; BORDER-TOP: #b4b4b4 1px solid; BORDER-LEFT: #b4b4b4 1px solid; BORDER-BOTTOM: #b4b4b4 1px solid
+}

@@ -1,0 +1,136 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	line-height: 25px;
+	background: #ecf8f5;
+}
+
+input[type=button]
+{
+	background-color: #F4F8F8;
+	border-left: 1px solid #E6F2F2;
+	border-top: 1px solid #E6F2F2;
+	border-right: 1px solid #CDE3E2;
+	font-size: 12px;
+	color: #1B2C29;
+}
+
+.btn2
+{
+	background-color: #F4F8F8;
+	border-left: 1px solid #E6F2F2;
+	border-top: 1px solid #E6F2F2;
+	border-right: 1px solid #CDE3E2;
+	font-size: 12px;
+	color: #1B2C29;
+}
+
+.btn
+{
+	background-color: #F4F8F8;
+	border-left: 1px solid #E6F2F2;
+	border-top: 1px solid #E6F2F2;
+	border-right: 1px solid #CDE3E2;
+	font-size: 12px;
+	text-align: center;
+	color: #1B2C29;
+	height: 25px;
+	width:65px;
+}
+
+.tab {
+	border: 0px solid #CDE2FD;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	font-size: 12px;
+	margin: 2px;
+	border-collapse: collapse;
+}
+
+.tab td {
+	line-height: 25px;
+	font-size: 12px;
+	height: 25px;
+	font-size: 12px;
+}
+
+.tab td input{
+	border-left: 1px solid #CDE2FD;
+	border-top: 1px solid #CDE2FD;
+	border-right: 1px solid #CDE2FD;
+	border-bottom: 1px solid #CDE2FD;
+	font-size: 12px;
+	color: #1B2C29;
+	height: 20px;
+}
+
+.tab1 {
+	border: 0px solid #CDE2FD;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	font-size: 12px;
+	margin: 2px;
+	border-collapse: collapse;
+}
+
+.tab1 td input{
+	border-left: 1px solid #CDE2FD;
+	border-top: 1px solid #CDE2FD;
+	border-right: 1px solid #CDE2FD;
+	font-size: 12px;
+	color: #1B2C29;
+	height: 20px;
+}
+
+.table2 {
+	border: 1px solid #CDE2FD;
+	width: 100%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	border-collapse: collapse;
+	font-size: 12px;
+}
+
+.table {
+	border: 0px solid #CDE2FD;
+	width: 100%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	font-size: 12px;
+	margin: 2px;
+	border-collapse: collapse;
+}
+
+.table td span {
+	line-height: 25px;
+	font-size: 12px;
+	color: #1B2C29;
+	height: 25px;
+	font-size: 12px;
+}
+
+.table1 {
+	border: 0px solid #CDE2FD;
+	width: 100%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	font-size: 12px;
+	border-collapse: collapse;
+}
+
+.table2 td {
+	text-align: left;
+	height: 15px;
+	line-height: 15px;
+}
+
+.table2 td input {
+	border-left: 1px solid #ecf8f5;
+	border-top: 1px solid #ecf8f5;
+	border-right: 1px solid #ecf8f5;
+	border-bottom: 1px solid #ecf8f5;
+	font-size: 12px;
+	color: #1B2C29;
+	height: 15px;
+}

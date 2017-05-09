@@ -1,0 +1,68 @@
+.table {
+	border: 0px solid #CDE2FD;
+	width: 100%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	font-size: 12px;
+	margin: 2px;
+}
+
+.table1 {
+	border: 0px solid #CDE2FD;
+	width: 100%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	font-size: 12px;
+}
+
+.table2 {
+	border: 1px solid #CDE2FD;
+	width: 100%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	border-collapse: collapse;
+	font-size: 12px;
+}
+
+.table2 td {
+	text-align: left;
+	height: 25px;
+	line-height: 25px;
+}
+
+.table2 td input {
+	border-left: 1px solid #FFFFFF;
+	border-top: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	font-size: 12px;
+	color: #1B2C29;
+	height: 15px;
+}
+
+.table td span {
+	line-height: 25px;
+	font-size: 12px;
+	color: #1B2C29;
+	height: 25px;
+	font-size: 12px;
+}
+
+#buttonArea input1 {
+	line-height: 20px;
+	font-size: 15px;
+	background: #CDE2FD;
+	padding: 5px 0 0 5px;
+}
+
+#buttonArea input {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding: 0px;
+	font-size: 15px;
+	height: 27px;
+	width: 110px;
+	background: url(../images/portal/btn.gif);
+}

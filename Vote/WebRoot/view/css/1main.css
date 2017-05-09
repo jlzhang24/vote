@@ -1,0 +1,149 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	line-height: 25px;
+	color: #0c6868;
+	background: #ecf8f5;
+}
+
+.table {
+	border: 1px solid #CDE2FD;
+}
+
+.table1 {
+	border: 1px solid #CDE2FD;
+	width: 100%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	font-size:12px;
+}
+
+.table2 {
+	border: 1px solid #CDE2FD;
+	width: 100%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	border-collapse: collapse;
+	font-size:12px;
+}
+
+.h1 {
+	font-size: 18px;
+	color: #015A64;
+	font-weight: bolder;
+	text-align: center;
+}
+
+.h2 {
+	font-size: 15px;
+	color: #015A64;
+	border-bottom: 1px solid #A6CCD0;
+	border-top: 1px solid #A6CCD0;
+	background-color: #E2F3F5;
+	font-weight: bolder;
+	height: 25px;
+}
+
+.information td {
+	text-indent: 10px;
+	border-bottom: 1px solid #A6CCD0;
+	text-align: left;
+	border-right: 1px solid #A6CCD0;
+}
+
+input {
+	background-color: #F4F8F8;
+	border-left: 1px solid #E6F2F2;
+	border-top: 1px solid #E6F2F2;
+	border-right: 1px solid #CDE3E2;
+	font-size: 12px;
+	color: #1B2C29;
+}
+
+textarea {
+	background-color: #F4F8F8;
+	border-left: 1px solid #E6F2F2;
+	border-top: 1px solid #E6F2F2;
+	border-right: 1px solid #CDE3E2;
+	font-size: 12px;
+	color: #1B2C29;
+}
+
+.linerow {
+	border-bottom: 1px solid #A6CCD0;
+	text-align: left;
+	text-indent: 12px;
+	height: 50px;
+}
+
+/* Link */
+a:link {
+	color: #09797b;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #09797b;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #d9964d;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #09797b;
+}
+
+.dl_left {
+	font-size: 12px;
+	color: #000066;
+	text-align: right;
+	background-color: #D6EBFF
+}
+
+.dl_bt {
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+}
+
+.dl_right {
+	background-color: #D6EBFF
+}
+
+.table_boder {
+	border: 1px solid #66ccff;
+}
+
+.table_bt {
+	font-size: 13px;
+	color: #000066;
+	text-align: center;
+	background-color: #D6EBFF
+}
+
+.table_td {
+	color: #000000;
+	text-align: center;
+	background-color: #E8F0FD
+}
+
+.m_table {
+	border: 0px solid #C6DCFD;
+	background-color: #F0F6FF
+}
+
+.m_left {
+	font-size: 12px;
+	color: #000066;
+	text-align: right;
+}
+
+.m_bt {
+	color: #000066;
+	font-weight: bold;
+	font-size: 12px;
+}
