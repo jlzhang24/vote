@@ -61,7 +61,7 @@
 </HEAD>
 <BODY>
 <DIV id=div1>
-<form id="logform" action="user/loginAction.jsp" method="post" onKeyDown="entersubmit(event)">
+<form id="logform" action="admin/loginAction.jsp" method="post" onKeyDown="entersubmit(event)">
   <TABLE id=login height="100%" cellSpacing=0 cellPadding=0 width=800 align=center>
     <TBODY>
       <TR id=main>

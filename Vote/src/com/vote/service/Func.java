@@ -14,16 +14,16 @@ import javax.servlet.http.HttpServletRequest;
 public class Func {
 	
 	/**
-	 * ¸ñÊ½»¯ÑùÊ½
+	 * æ ¼å¼åŒ–æ ·å¼
 	 */
 	private static String formatPattern = "yyyy-MM-dd";
 	
 	private static SimpleDateFormat formatDate = new SimpleDateFormat(formatPattern);
 	
 	/**
-	 * ¸ñÊ½»¯ÈÕÆÚ ½«×Ö·û´®×ª»»ÎªÈÕÆÚ
-	 * @param datestr ÈÕÆÚ×Ö·û´®
-	 * @return ¸ñÊ½»¯ºóµÄÈÕÆÚ
+	 * æ ¼å¼åŒ–æ—¥æœŸ å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºæ—¥æœŸ
+	 * @param datestr æ—¥æœŸå­—ç¬¦ä¸²
+	 * @return æ ¼å¼åŒ–åçš„æ—¥æœŸ
 	 */
 	public static Date formatDate(String datestr){
 		Date date = null;
@@ -36,9 +36,9 @@ public class Func {
 	}
 	
 	/**
-	 * ½«ÈÕÆÚ¸ñÊ½»¯Îªyyyy-MM-dd¸ñÊ½µÄ×Ö·û´®
-	 * @param date ÈÕÆÚ
-	 * @return yyyy-MM-dd¸ñÊ½µÄ×Ö·û´®
+	 * å°†æ—¥æœŸæ ¼å¼åŒ–ä¸ºyyyy-MM-ddæ ¼å¼çš„å­—ç¬¦ä¸²
+	 * @param date æ—¥æœŸ
+	 * @return yyyy-MM-ddæ ¼å¼çš„å­—ç¬¦ä¸²
 	 */
 	public static String formatString(Date date){
 		String datestr = null;
@@ -47,9 +47,9 @@ public class Func {
 	}
 	
 	/**
-	   * »ñÈ¡µ±Ç°ÈÕÆÚ
-	   * @param format ¸ñÊ½»¯Ä£°å
-	   * @return ¸ñÊ½»¯Ö®ºóµÄÈÕÆÚ×Ö·û´®
+	   * è·å–å½“å‰æ—¥æœŸ
+	   * @param format æ ¼å¼åŒ–æ¨¡æ¿
+	   * @return æ ¼å¼åŒ–ä¹‹åçš„æ—¥æœŸå­—ç¬¦ä¸²
 	   */
 	  public static String getCurrDate(String format)
 	  {
@@ -58,18 +58,18 @@ public class Func {
 	  }
 	  
 	  /**
-	   * »ñÈ¡µ±Ç°ÈÕÆÚ
-	   * @return µ±Ç°ÈÕÆÚ×Ö·û´®
+	   * è·å–å½“å‰æ—¥æœŸ
+	   * @return å½“å‰æ—¥æœŸå­—ç¬¦ä¸²
 	   */
 	  public static String getCurrDate()
 	  {
-	    SimpleDateFormat sdfDate = new SimpleDateFormat("yyyyÄêMMÄêddÈÕ");
+	    SimpleDateFormat sdfDate = new SimpleDateFormat("yyyyå¹´MMå¹´ddæ—¥");
 	    return sdfDate.format(Calendar.getInstance().getTime());
 	  }
 	  
 	  /**
-	   * »ñÈ¡µ±Ç°Äê·İ
-	   * @return µ±Ç°Äê·İ×Ö·û´®
+	   * è·å–å½“å‰å¹´ä»½
+	   * @return å½“å‰å¹´ä»½å­—ç¬¦ä¸²
 	   */
 	  public static String getCurrYear()
 	  {
@@ -78,9 +78,9 @@ public class Func {
 	  }
 	
 	  /**
-	   * Èç¹û´«ÈëµÄ×Ö·û´®²ÎÊıÎªnull»òÕß""£¬ÄÇÃ´·µ»Ø" "£¬·ñÔò·µ»Ø´«ÈëµÄ×Ö·û´®
-	   * @param s ´«ÈëµÄ×Ö·û´®
-	   * @return ´¦Àíºó×Ö·û´®
+	   * å¦‚æœä¼ å…¥çš„å­—ç¬¦ä¸²å‚æ•°ä¸ºnullæˆ–è€…""ï¼Œé‚£ä¹ˆè¿”å›" "ï¼Œå¦åˆ™è¿”å›ä¼ å…¥çš„å­—ç¬¦ä¸²
+	   * @param s ä¼ å…¥çš„å­—ç¬¦ä¸²
+	   * @return å¤„ç†åå­—ç¬¦ä¸²
 	   * @throws Exception
 	   */
 	   public static String getBlankSpaceString(String s) 
@@ -94,8 +94,8 @@ public class Func {
 	   }  
 	  
 	  /**
-	   * Èç¹û´«ÈëµÄ×Ö·û´®²ÎÊıÎªnull£¬ÄÇÃ´·µ»Ø""£¬·ñÔò·µ»Ø´«ÈëµÄ×Ö·û´®
-	   * @param o ´«ÈëµÄ×Ö·û´®¶ÔÏó
+	   * å¦‚æœä¼ å…¥çš„å­—ç¬¦ä¸²å‚æ•°ä¸ºnullï¼Œé‚£ä¹ˆè¿”å›""ï¼Œå¦åˆ™è¿”å›ä¼ å…¥çš„å­—ç¬¦ä¸²
+	   * @param o ä¼ å…¥çš„å­—ç¬¦ä¸²å¯¹è±¡
 	   * @return String
 	   * @throws Exception
 	   */
@@ -108,7 +108,7 @@ public class Func {
 	   }
 	   
 	   /**
-	    * Èç¹û´«ÈëµÄÊı×Ö²ÎÊıÎª0£¬ÄÇÃ´·µ»Ø""£¬·ñÔò·µ»Ø´«ÈëµÄÊı×Ö
+	    * å¦‚æœä¼ å…¥çš„æ•°å­—å‚æ•°ä¸º0ï¼Œé‚£ä¹ˆè¿”å›""ï¼Œå¦åˆ™è¿”å›ä¼ å…¥çš„æ•°å­—
 	    * @param d
 	    * @return
 	    */
@@ -125,9 +125,9 @@ public class Func {
 	   }
 	   
 	   /**
-	    * ½«×Ö·û´®Êı×é½âÎö³É[ 'a','b' ]·µ»Ø£¬Èô×Ö·û´®Êı×éµÄ³¤¶ÈÎª0£¬ÄÇÃ´·µ»Ø""
+	    * å°†å­—ç¬¦ä¸²æ•°ç»„è§£ææˆ[ 'a','b' ]è¿”å›ï¼Œè‹¥å­—ç¬¦ä¸²æ•°ç»„çš„é•¿åº¦ä¸º0ï¼Œé‚£ä¹ˆè¿”å›""
 	    * @param a
-	    * @return [ 'a','b' ]ĞÎÊ½µÄ×Ö·û´®
+	    * @return [ 'a','b' ]å½¢å¼çš„å­—ç¬¦ä¸²
 	    */
 	   public static String arrayToSqlIn(String[] a) 
 	   {
@@ -147,7 +147,7 @@ public class Func {
 	   }  
 	   
 	   /**
-	    * ½«ÕûÊıÊı×é½âÎö³É[ a,b ]·µ»Ø£¬ÈôÊı×éµÄ³¤¶ÈÎª0£¬ÄÇÃ´·µ»Ø""
+	    * å°†æ•´æ•°æ•°ç»„è§£ææˆ[ a,b ]è¿”å›ï¼Œè‹¥æ•°ç»„çš„é•¿åº¦ä¸º0ï¼Œé‚£ä¹ˆè¿”å›""
 	    * @param a
 	    * @return
 	    */
@@ -168,10 +168,10 @@ public class Func {
 	   } 
 	   
 	   /**
-	    * »ñÈ¡¹Ì¶¨³¤¶ÈµÄ×ÔÔö³¤ĞòºÅ
-	    * @param curr µ±Ç°ÒÑÊ¹ÓÃµÄĞòºÅÊıÖµ
-	    * @param digit ³¤¶È
-	    * @return ×ÔÔö³¤ĞòºÅ
+	    * è·å–å›ºå®šé•¿åº¦çš„è‡ªå¢é•¿åºå·
+	    * @param curr å½“å‰å·²ä½¿ç”¨çš„åºå·æ•°å€¼
+	    * @param digit é•¿åº¦
+	    * @return è‡ªå¢é•¿åºå·
 	    * @throws Exception
 	    */
 	   public static String getNewIndex(long curr, int digit) throws Exception
@@ -181,7 +181,7 @@ public class Func {
 	     for (int i = 0; i < digit; i++)
 	       s = s * 10;
 	     if(idx>=s)
-	       throw new Exception("×ÔÔö³¤µÄË³ĞòºÅ³¬³ö·¶Î§["+s+"]");
+	       throw new Exception("è‡ªå¢é•¿çš„é¡ºåºå·è¶…å‡ºèŒƒå›´["+s+"]");
 	     
 	     String sIdx = String.valueOf(s + idx).substring(1);
 
@@ -189,9 +189,9 @@ public class Func {
 	   }
 	   
 	   /**
-	    * ÅĞ¶ÏÈÕÆÚºÏ·¨ĞÔ
-	    * @param dateStr ÈÕÆÚ×Ö·û´® 8Î»Êı×Ö(yyyyMMdd)
-	    * @return Èç¹ûÊÇÕıÈ·µÄÈÕÆÚ·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	    * åˆ¤æ–­æ—¥æœŸåˆæ³•æ€§
+	    * @param dateStr æ—¥æœŸå­—ç¬¦ä¸² 8ä½æ•°å­—(yyyyMMdd)
+	    * @return å¦‚æœæ˜¯æ­£ç¡®çš„æ—¥æœŸè¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	    */
 	   public  static boolean checkDate(String dateStr) throws Exception
 	   {
@@ -211,9 +211,9 @@ public class Func {
 	   }
 	   
 	   /**
-	    * ¼ÆËã×Ö·û´®³¤¶È Ò»¸öÖĞÎÄ×Ö·ûµÄ³¤¶ÈÎª2
-	    * @param str ×Ö·û´®
-	    * @return ×Ö·û´®³¤¶È
+	    * è®¡ç®—å­—ç¬¦ä¸²é•¿åº¦ ä¸€ä¸ªä¸­æ–‡å­—ç¬¦çš„é•¿åº¦ä¸º2
+	    * @param str å­—ç¬¦ä¸²
+	    * @return å­—ç¬¦ä¸²é•¿åº¦
 	    * @throws Exception
 	    */
 	   public static int getStringLength(String str) throws Exception
@@ -225,25 +225,25 @@ public class Func {
 	   }
 	   
 	   /**
-	    * ×Ö·û´®ÊÇ·ñÊÇ¹Ì¶¨³¤¶ÈµÄÊı×Ö
-	    * @param str ×Ö·û´®
-	    * @param length ³¤¶È
-	    * @return Èç¹ûÊÇ·µ»Øtrue ·ñÔò·µ»Øfalse
+	    * å­—ç¬¦ä¸²æ˜¯å¦æ˜¯å›ºå®šé•¿åº¦çš„æ•°å­—
+	    * @param str å­—ç¬¦ä¸²
+	    * @param length é•¿åº¦
+	    * @return å¦‚æœæ˜¯è¿”å›true å¦åˆ™è¿”å›false
 	    * @throws Exception
 	    */
 	   public static boolean isFixLengthNum(String str,int length) throws Exception
 	   {
-	     String regexNum = "\\d{"+length+"}"; // ±È½ÏÓÃÕıÔò±í´ïÊ½
-	     Pattern patternNum = Pattern.compile(regexNum); // ¸ñÊ½»¯±È½Ï¹æÔò
+	     String regexNum = "\\d{"+length+"}"; // æ¯”è¾ƒç”¨æ­£åˆ™è¡¨è¾¾å¼
+	     Pattern patternNum = Pattern.compile(regexNum); // æ ¼å¼åŒ–æ¯”è¾ƒè§„åˆ™
 	     Matcher isNum = patternNum.matcher(str);
 	     return isNum.matches();
 	   }
 	   
 	  
 	  /**
-	   * ½«java.util.date×ª»»Îªjava.sql.date
+	   * å°†java.util.dateè½¬æ¢ä¸ºjava.sql.date
 	   * @param date java.util.date
-	   * @return ×ª»»ºóµÄjava.sql.date
+	   * @return è½¬æ¢åçš„java.sql.date
 	   */
 	  public static java.sql.Date toSQLDate(Date date) 
 	  {
@@ -261,10 +261,10 @@ public class Func {
 	  }
 	  
 	  /**
-	   * ¼ÆËã2¸öÈÕÆÚÖ®¼ä¼ä¸ôµÄÄêÊı
-	   * @param startDate ÈÕÆÚ1
-	   * @param endDate ÈÕÆÚ2
-	   * @return ¼ä¸ôµÄÄêÊı
+	   * è®¡ç®—2ä¸ªæ—¥æœŸä¹‹é—´é—´éš”çš„å¹´æ•°
+	   * @param startDate æ—¥æœŸ1
+	   * @param endDate æ—¥æœŸ2
+	   * @return é—´éš”çš„å¹´æ•°
 	   * @throws Exception
 	   */
 	  public static long getYearsBetween(Date startDate,Date endDate) throws Exception
@@ -277,10 +277,10 @@ public class Func {
 	  }
 	  
 	  /**
-	   * ±£ÁôĞ¡Êı
-	   * @param value ÊıÖµ
-	   * @param scale Ğ¡ÊıÎ»Êı
-	   * @return ËÄÉáÎåÈëºóµÄ½á¹ûÖµ
+	   * ä¿ç•™å°æ•°
+	   * @param value æ•°å€¼
+	   * @param scale å°æ•°ä½æ•°
+	   * @return å››èˆäº”å…¥åçš„ç»“æœå€¼
 	   * @throws Exception
 	   */
 	  public static double changeDecimal(double value, int scale) throws Exception
@@ -290,13 +290,13 @@ public class Func {
 	      throw new IllegalArgumentException("The scale must be a positive integer or zero");
 	    }
 	    BigDecimal bd = new BigDecimal(value);
-	    bd = bd.setScale(scale, BigDecimal.ROUND_HALF_UP);//ËÄÉáÎåÈë´¦Àí
+	    bd = bd.setScale(scale, BigDecimal.ROUND_HALF_UP);//å››èˆäº”å…¥å¤„ç†
 	    double num = bd.doubleValue();
 	    return num;
 	  }	
 	
 	/**
-	 * »ñÈ¡ÓÃ»§ÕæÊµIP
+	 * è·å–ç”¨æˆ·çœŸå®IP
 	 * @param request
 	 * @return
 	 */
