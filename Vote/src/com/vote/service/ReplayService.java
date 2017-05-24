@@ -18,8 +18,8 @@ import com.vote.bean.Replay;
 public class ReplayService {
 
 	/**
-	 * »ñÈ¡ËùÓÐÎÊÌâ»Ø´ðÇé¿ö
-	 * @param oid Ö÷ÌâID
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½ï¿½ï¿½ï¿½
+	 * @param oid ï¿½ï¿½ï¿½ï¿½ID
 	 * @return
 	 */
 	public static Map<Integer,List<Map<Integer,Integer>>> getAllAnswer(int oid) {
@@ -103,7 +103,7 @@ public class ReplayService {
 	}
 	
 	/**
-	 * µÃµ½ÎÊÌâ×ÜÊý
+	 * ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param con
 	 * @param oid
 	 * @return
@@ -124,12 +124,12 @@ public class ReplayService {
 		}finally{
 			DBConnection.free(stm, rs);
 		}
-//		System.out.println("ÎÊÌâµÄ×ÜÊý" + qcount);
+//		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + qcount);
 		return qcount;
 	}
 	
 	/**
-	 * µÃµ½Ñ¡Ïî×ÜÊý
+	 * ï¿½Ãµï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param con
 	 * @param oid
 	 * @return
@@ -150,13 +150,13 @@ public class ReplayService {
 		}finally{
 			DBConnection.free(stm, rs);
 		}
-//		System.out.println("Ñ¡ÏîµÄ×ÜÊý" + qcount);
+//		System.out.println("Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + qcount);
 		return qcount;
 	}
 	
 	/**
-	 * ¸ù¾ÝÖ÷ÌâID²éÑ¯»Ø¸´×ÜÊý
-	 * @param oid Ö÷ÌâID
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IDï¿½ï¿½Ñ¯ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * @param oid ï¿½ï¿½ï¿½ï¿½ID
 	 * @return
 	 */
 	public static int getAnswerCount(int oid) {
@@ -179,16 +179,16 @@ public class ReplayService {
 		}finally{
 			db.closeAll(con, stm, rs);
 		}
-//		System.out.println("»Ø¸´ÈËÊý×ÜÊýrcount:" + rcount);
+//		System.out.println("ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½rcount:" + rcount);
 		return rcount;
 	}
 	
 	/**
-	 * ¸ù¾ÝÖ÷ÌâIdºÍÌâÄ¿ÐòºÅ²éÑ¯¸ÃÎÊÌâµÄ»Ø´ðÊý
-	 * @param con Êý¾Ý¿âÁ¬½Ó
-	 * @param oid Ö÷ÌâId
-	 * @param qSeq ÌâÄ¿ÐòºÅ
-	 * @return »Ø´ðÊý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Idï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Å²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»Ø´ï¿½ï¿½ï¿½
+	 * @param con ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * @param oid ï¿½ï¿½ï¿½ï¿½Id
+	 * @param qSeq ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½
+	 * @return ï¿½Ø´ï¿½ï¿½ï¿½
 	 */
 	public static int getAnswerCount(Connection con, int oid,int qSeq) {
 		Statement stm=null;
@@ -207,17 +207,17 @@ public class ReplayService {
 		}finally{
 			DBConnection.free(stm, rs);
 		}
-//		System.out.println("ÎÊÌâµÄ»Ø´ðÊýrcount:" + rcount);
+//		System.out.println("ï¿½ï¿½ï¿½ï¿½Ä»Ø´ï¿½ï¿½ï¿½rcount:" + rcount);
 		return rcount;
 	}
 	
 	/**
-	 * ¸ù¾ÝÖ÷ÌâIdºÍÌâÄ¿ÐòºÅºÍÑ¡ÏîÐòºÅ²éÑ¯¸ÃÎÊÌâÑ¡ÏîµÄ»Ø´ðÊý
-	 * @param con Êý¾Ý¿âÁ¬½Ó
-	 * @param oid Ö÷ÌâId
-	 * @param qSeq ÌâÄ¿ÐòºÅ
-	 * @param seSeq Ñ¡ÏîÐòºÅ
-	 * @return ÎÊÌâÑ¡ÏîµÄ»Ø´ðÊý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Idï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Åºï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Å²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ä»Ø´ï¿½ï¿½ï¿½
+	 * @param con ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * @param oid ï¿½ï¿½ï¿½ï¿½Id
+	 * @param qSeq ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½
+	 * @param seSeq Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * @return ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ä»Ø´ï¿½ï¿½ï¿½
 	 */
 	public static int getAnswerCount(Connection con, int oid,int qSeq,int seSeq) {
 		Statement stm=null;
@@ -236,12 +236,12 @@ public class ReplayService {
 		}finally{
 			DBConnection.free(stm, rs);
 		}
-//		System.out.println("ÎÊÌâÑ¡ÏîµÄ»Ø´ðÊýrcount:" + rcount);
+//		System.out.println("ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ä»Ø´ï¿½ï¿½ï¿½rcount:" + rcount);
 		return rcount;
 	}
 	
 	/**
-	 * ½«»Ø¸´ÐÅÏ¢´æ´¢µ½Êý¾Ý¿â
+	 * ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½Ï¢ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
 	 * @param rList
 	 * @return
 	 */
@@ -260,14 +260,15 @@ public class ReplayService {
 			con = db.getConnection();
 			defaultAutoCommit = con.getAutoCommit();
 			con.setAutoCommit(false);
-			sql = "insert into wj_replay(replayCode,replayIp,oid,replayTime,remark) values (?,?,?,?,?)";
+			sql = "insert into wj_replay(replayID,replayCode,replayIp,oid,replayTime,remark) values (?,?,?,?,?,?)";
 			System.out.println(sql);
 			stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			stmt.setString(1, r.getReplayCode());
-			stmt.setString(2, r.getReplayIp());
-			stmt.setInt(3, r.getoId());
-			stmt.setTimestamp(4, currentTime);
-			stmt.setString(5, r.getRemark());
+			stmt.setInt(1, r.getReplayId());
+			stmt.setString(2, r.getReplayCode());
+			stmt.setString(3, r.getReplayIp());
+			stmt.setInt(4, r.getoId());
+			stmt.setTimestamp(5, currentTime);
+			stmt.setString(6, r.getRemark());
 			
 			stmt.executeUpdate();
 			rs = stmt.getGeneratedKeys();
@@ -293,7 +294,7 @@ public class ReplayService {
 			con.commit();
 			con.setAutoCommit(defaultAutoCommit);
 			flag = true;
-			System.out.println("²åÈë±í[wj_answer] "+count+" Ìõ¼ÇÂ¼");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½[wj_answer] "+count+" ï¿½ï¿½ï¿½ï¿½Â¼");
 		} catch (Exception e) {
 			try {
 				if(con!=null){
@@ -309,7 +310,7 @@ public class ReplayService {
 		return flag;
 	}
 	
-	// É¾³ýÎÊ¾í»Ø¸´Çé¿ö
+	// É¾ï¿½ï¿½ï¿½Ê¾ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½
 	public static boolean delReplay(int oid) throws Exception {
 		DBConnection dbcon = new DBConnection();
 		boolean flag = false;
@@ -337,7 +338,7 @@ public class ReplayService {
 	}
 	
 	/**
-	 * ÅÐ¶ÏÊÇ·ñ´æÔÚ»Ø¸´
+	 * ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ú»Ø¸ï¿½
 	 * @param oid
 	 * @param code
 	 * @return

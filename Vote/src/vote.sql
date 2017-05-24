@@ -141,6 +141,19 @@ insert  into `wj_selecter`(`oid`,`qseq`,`content`,`selseq`,`remark`) values (21,
 
 UNLOCK TABLES;
 
+/*学生信息表*/
+create table wj_user
+(
+	xh varchar(10),
+	xm varchar(10),
+	sfzh varchar(4),
+	bjmc varchar(20),
+	zymc varchar(20),
+	xy varchar(20)
+);
+ 
+insert into wj_user values('11640115','汪向鹏','1918','市场营销11级2班','市场营销','经济管理学院')
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
