@@ -10,7 +10,7 @@ import com.vote.bean.Question;
 
 public class QuestionService {
 
-    //¸ù¾İÎÊ¾íµÄ±àºÅ²éÕÒ¸ÃÊôÓÚ¸ÃÎÊ¾íµÄÌâÄ¿
+    //æ ¹æ®é—®å·çš„ç¼–å·æŸ¥æ‰¾è¯¥å±äºè¯¥é—®å·çš„é¢˜ç›®
 	public List<Question> litQuesByOid(int oid) {
 		DBConnection dbcon = null;
 		Connection con = null;
@@ -64,7 +64,7 @@ public class QuestionService {
 		}
 	}
 
-//	 ²åÈëÌâÄ¿Ç°ÏÈĞŞ¸ÄÌâÄ¿±íµÄÌâÄ¿Ë³ĞòºÅ
+//	 æ’å…¥é¢˜ç›®å‰å…ˆä¿®æ”¹é¢˜ç›®è¡¨çš„é¢˜ç›®é¡ºåºå·
 	public int updateQuesOrder(int oid, int seq) {
 		DBConnection dbcon = null;
 		Connection con = null;
@@ -87,7 +87,7 @@ public class QuestionService {
 	}
 	
 
-//	 ±à¼­ÌâÄ¿µÄÊ±ºò ÏÈµÄµ½ËüµÄÌâÄ¿TITLE ,Ñ¡ÏîÀàĞÍ,Ñ¡ÏîÄÚÈİ
+//	 ç¼–è¾‘é¢˜ç›®çš„æ—¶å€™ å…ˆçš„åˆ°å®ƒçš„é¢˜ç›®TITLE ,é€‰é¡¹ç±»å‹,é€‰é¡¹å†…å®¹
 	public Question getQuesBySeq(int seq, int oid) {
 		DBConnection dbcon = null;
 		Connection con = null;
@@ -118,7 +118,7 @@ public class QuestionService {
 		}
 	}
 	
-//	 ¸ù¾İ´«½øÀ´µÄÎÊ¾í±àºÅºÍÊÔÌâµÄË³ĞòºÅ É¾³ıÌâÄ¿
+//	 æ ¹æ®ä¼ è¿›æ¥çš„é—®å·ç¼–å·å’Œè¯•é¢˜çš„é¡ºåºå· åˆ é™¤é¢˜ç›®
 	public int deleteQues(int seq, int oid) {
 		DBConnection dbcon = null;
 		Connection con = null;
@@ -142,7 +142,7 @@ public class QuestionService {
 		return count;
 	}
 
-//	 ¸ù¾İ´«½øÀ´µÄÎÊ¾í±àºÅºÍÌâÄ¿µÄĞòºÅ ĞŞ¸ÄÌâÄ¿±íÖĞÌâÄ¿µÄË³Ğò
+//	 æ ¹æ®ä¼ è¿›æ¥çš„é—®å·ç¼–å·å’Œé¢˜ç›®çš„åºå· ä¿®æ”¹é¢˜ç›®è¡¨ä¸­é¢˜ç›®çš„é¡ºåº
 	public int updateQseq(int seq, int oid) {
 		DBConnection dbcon = null;
 		Connection con = null;
@@ -167,7 +167,7 @@ public class QuestionService {
 
 	}
 	
-	// µÃµ½ÎÊÌâµÄ×ÜÊı
+	// å¾—åˆ°é—®é¢˜çš„æ€»æ•°
 	public int getQuesCount(int oid) {
 		DBConnection dbcon = null;
 		Connection con = null;
@@ -188,7 +188,7 @@ public class QuestionService {
 		}finally{
 			dbcon.closeAll(con, stm, rs);
 		}
-		System.out.println("ÎÊÌâµÄ×ÜÊı" + qcount);
+		System.out.println("é—®é¢˜çš„æ€»æ•°" + qcount);
 		return qcount;
 	}
 	

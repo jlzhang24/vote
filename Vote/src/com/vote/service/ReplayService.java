@@ -18,8 +18,8 @@ import com.vote.bean.Replay;
 public class ReplayService {
 
 	/**
-	 * ��ȡ��������ش����
-	 * @param oid ����ID
+	 * 获取所有问题回答情况
+	 * @param oid 主题ID
 	 * @return
 	 */
 	public static Map<Integer,List<Map<Integer,Integer>>> getAllAnswer(int oid) {
@@ -103,7 +103,7 @@ public class ReplayService {
 	}
 	
 	/**
-	 * �õ���������
+	 * 得到问题总数
 	 * @param con
 	 * @param oid
 	 * @return
@@ -124,12 +124,12 @@ public class ReplayService {
 		}finally{
 			DBConnection.free(stm, rs);
 		}
-//		System.out.println("���������" + qcount);
+//		System.out.println("问题的总数" + qcount);
 		return qcount;
 	}
 	
 	/**
-	 * �õ�ѡ������
+	 * 得到选项总数
 	 * @param con
 	 * @param oid
 	 * @return
@@ -150,13 +150,13 @@ public class ReplayService {
 		}finally{
 			DBConnection.free(stm, rs);
 		}
-//		System.out.println("ѡ�������" + qcount);
+//		System.out.println("选项的总数" + qcount);
 		return qcount;
 	}
 	
 	/**
-	 * �������ID��ѯ�ظ�����
-	 * @param oid ����ID
+	 * 根据主题ID查询回复总数
+	 * @param oid 主题ID
 	 * @return
 	 */
 	public static int getAnswerCount(int oid) {
@@ -179,16 +179,16 @@ public class ReplayService {
 		}finally{
 			db.closeAll(con, stm, rs);
 		}
-//		System.out.println("�ظ���������rcount:" + rcount);
+//		System.out.println("回复人数总数rcount:" + rcount);
 		return rcount;
 	}
 	
 	/**
-	 * �������Id����Ŀ��Ų�ѯ������Ļش���
-	 * @param con ��ݿ�����
-	 * @param oid ����Id
-	 * @param qSeq ��Ŀ���
-	 * @return �ش���
+	 * 根据主题Id和题目序号查询该问题的回答数
+	 * @param con 数据库连接
+	 * @param oid 主题Id
+	 * @param qSeq 题目序号
+	 * @return 回答数
 	 */
 	public static int getAnswerCount(Connection con, int oid,int qSeq) {
 		Statement stm=null;
@@ -207,17 +207,17 @@ public class ReplayService {
 		}finally{
 			DBConnection.free(stm, rs);
 		}
-//		System.out.println("����Ļش���rcount:" + rcount);
+//		System.out.println("问题的回答数rcount:" + rcount);
 		return rcount;
 	}
 	
 	/**
-	 * �������Id����Ŀ��ź�ѡ����Ų�ѯ������ѡ��Ļش���
-	 * @param con ��ݿ�����
-	 * @param oid ����Id
-	 * @param qSeq ��Ŀ���
-	 * @param seSeq ѡ�����
-	 * @return ����ѡ��Ļش���
+	 * 根据主题Id和题目序号和选项序号查询该问题选项的回答数
+	 * @param con 数据库连接
+	 * @param oid 主题Id
+	 * @param qSeq 题目序号
+	 * @param seSeq 选项序号
+	 * @return 问题选项的回答数
 	 */
 	public static int getAnswerCount(Connection con, int oid,int qSeq,int seSeq) {
 		Statement stm=null;
@@ -236,12 +236,12 @@ public class ReplayService {
 		}finally{
 			DBConnection.free(stm, rs);
 		}
-//		System.out.println("����ѡ��Ļش���rcount:" + rcount);
+//		System.out.println("问题选项的回答数rcount:" + rcount);
 		return rcount;
 	}
 	
 	/**
-	 * ���ظ���Ϣ�洢����ݿ�
+	 * 将回复信息存储到数据库
 	 * @param rList
 	 * @return
 	 */
@@ -260,15 +260,14 @@ public class ReplayService {
 			con = db.getConnection();
 			defaultAutoCommit = con.getAutoCommit();
 			con.setAutoCommit(false);
-			sql = "insert into wj_replay(replayID,replayCode,replayIp,oid,replayTime,remark) values (?,?,?,?,?,?)";
+			sql = "insert into wj_replay(replayCode,replayIp,oid,replayTime,remark) values (?,?,?,?,?)";
 			System.out.println(sql);
 			stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			stmt.setInt(1, r.getReplayId());
-			stmt.setString(2, r.getReplayCode());
-			stmt.setString(3, r.getReplayIp());
-			stmt.setInt(4, r.getoId());
-			stmt.setTimestamp(5, currentTime);
-			stmt.setString(6, r.getRemark());
+			stmt.setString(1, r.getReplayCode());
+			stmt.setString(2, r.getReplayIp());
+			stmt.setInt(3, r.getoId());
+			stmt.setTimestamp(4, currentTime);
+			stmt.setString(5, r.getRemark());
 			
 			stmt.executeUpdate();
 			rs = stmt.getGeneratedKeys();
@@ -294,7 +293,7 @@ public class ReplayService {
 			con.commit();
 			con.setAutoCommit(defaultAutoCommit);
 			flag = true;
-			System.out.println("�����[wj_answer] "+count+" ����¼");
+			System.out.println("插入表[wj_answer] "+count+" 条记录");
 		} catch (Exception e) {
 			try {
 				if(con!=null){
@@ -310,7 +309,7 @@ public class ReplayService {
 		return flag;
 	}
 	
-	// ɾ���ʾ�ظ����
+	// 删除问卷回复情况
 	public static boolean delReplay(int oid) throws Exception {
 		DBConnection dbcon = new DBConnection();
 		boolean flag = false;
@@ -338,7 +337,7 @@ public class ReplayService {
 	}
 	
 	/**
-	 * �ж��Ƿ���ڻظ�
+	 * 判断是否存在回复
 	 * @param oid
 	 * @param code
 	 * @return

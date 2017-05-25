@@ -18,36 +18,36 @@ import org.jfree.data.general.PieDataset;
 public class PieChartPicture {
 	public static void main(String[] args) {
 		PieDataset dataset = getDataSet();
-		JFreeChart chart = ChartFactory.createPieChart3D(" ÏîÄ¿½ø¶È·Ö²¼", // chart
+		JFreeChart chart = ChartFactory.createPieChart3D(" é¡¹ç›®è¿›åº¦åˆ†å¸ƒ", // chart
 																	// title
 				dataset,// data
 				true,// include legend
 				true, false);
 		PiePlot3D plot = (PiePlot3D) chart.getPlot();
-		// Í¼Æ¬ÖĞÏÔÊ¾°Ù·Ö±È:Ä¬ÈÏ·½Ê½
+		// å›¾ç‰‡ä¸­æ˜¾ç¤ºç™¾åˆ†æ¯”:é»˜è®¤æ–¹å¼
 		// plot.setLabelGenerator(new
 		// StandardPieSectionLabelGenerator(StandardPieToolTipGenerator.DEFAULT_TOOLTIP_FORMAT));
-		// Í¼Æ¬ÖĞÏÔÊ¾°Ù·Ö±È:×Ô¶¨Òå·½Ê½£¬{0} ±íÊ¾Ñ¡Ïî£¬ {1} ±íÊ¾ÊıÖµ£¬ {2} ±íÊ¾ËùÕ¼±ÈÀı ,Ğ¡ÊıµãºóÁ½Î»
+		// å›¾ç‰‡ä¸­æ˜¾ç¤ºç™¾åˆ†æ¯”:è‡ªå®šä¹‰æ–¹å¼ï¼Œ{0} è¡¨ç¤ºé€‰é¡¹ï¼Œ {1} è¡¨ç¤ºæ•°å€¼ï¼Œ {2} è¡¨ç¤ºæ‰€å æ¯”ä¾‹ ,å°æ•°ç‚¹åä¸¤ä½
 		plot.setLabelGenerator(new StandardPieSectionLabelGenerator(
 				"{0}={1}({2})", NumberFormat.getNumberInstance(),
 				new DecimalFormat("0.00%")));
-		// Í¼ÀıÏÔÊ¾°Ù·Ö±È:×Ô¶¨Òå·½Ê½£¬ {0} ±íÊ¾Ñ¡Ïî£¬ {1} ±íÊ¾ÊıÖµ£¬ {2} ±íÊ¾ËùÕ¼±ÈÀı
+		// å›¾ä¾‹æ˜¾ç¤ºç™¾åˆ†æ¯”:è‡ªå®šä¹‰æ–¹å¼ï¼Œ {0} è¡¨ç¤ºé€‰é¡¹ï¼Œ {1} è¡¨ç¤ºæ•°å€¼ï¼Œ {2} è¡¨ç¤ºæ‰€å æ¯”ä¾‹
 		plot.setLegendLabelGenerator(new StandardPieSectionLabelGenerator(
 				"{0}={1}({2})"));
-		// ÉèÖÃ±³¾°É«Îª°×É«
+		// è®¾ç½®èƒŒæ™¯è‰²ä¸ºç™½è‰²
 		chart.setBackgroundPaint(Color.white);
-		// Ö¸¶¨Í¼Æ¬µÄÍ¸Ã÷¶È(0.0-1.0)
+		// æŒ‡å®šå›¾ç‰‡çš„é€æ˜åº¦(0.0-1.0)
 		plot.setForegroundAlpha(1.0f);
-		// Ö¸¶¨ÏÔÊ¾µÄ±ıÍ¼ÉÏÔ²ĞÎ(false)»¹ÍÖÔ²ĞÎ(true)
+		// æŒ‡å®šæ˜¾ç¤ºçš„é¥¼å›¾ä¸Šåœ†å½¢(false)è¿˜æ¤­åœ†å½¢(true)
 		plot.setCircular(true);
-		// ¶¨Òå×ÖÌå¸ñÊ½
-		// Font font = new Font("ËÎÌå", Font.BOLDITALIC, 12);
-		Font font = new java.awt.Font("ºÚÌå", java.awt.Font.CENTER_BASELINE, 20);
-		TextTitle title = new TextTitle(" ÏîÄ¿×´Ì¬·Ö²¼");
+		// å®šä¹‰å­—ä½“æ ¼å¼
+		// Font font = new Font("å®‹ä½“", Font.BOLDITALIC, 12);
+		Font font = new java.awt.Font("é»‘ä½“", java.awt.Font.CENTER_BASELINE, 20);
+		TextTitle title = new TextTitle(" é¡¹ç›®çŠ¶æ€åˆ†å¸ƒ");
 		title.setFont(font);
-		// ÉèÖÃ×ÖÌå,·Ç³£¹Ø¼ü²»È»»á³öÏÖÂÒÂëµÄ,ÏÂ·½µÄ×ÖÌå
+		// è®¾ç½®å­—ä½“,éå¸¸å…³é”®ä¸ç„¶ä¼šå‡ºç°ä¹±ç çš„,ä¸‹æ–¹çš„å­—ä½“
 		chart.getLegend().setItemFont(font);
-		// ÉèÖÃÍ¼Æ¬µÄµØÖ·PieÍ¼µÄ×ÖÌå
+		// è®¾ç½®å›¾ç‰‡çš„åœ°å€Pieå›¾çš„å­—ä½“
 		plot.setLabelFont(font);
 		chart.setTitle(title);
 		FileOutputStream fos_jpg = null;
@@ -61,13 +61,13 @@ public class PieChartPicture {
 
 	private static PieDataset getDataSet() {
 		DefaultPieDataset dataset = new DefaultPieDataset();
-		dataset.setValue(" ÊĞ³¡Ç°ÆÚ", new Double(10));
-		dataset.setValue(" Á¢Ïî", new Double(15));
-		dataset.setValue(" ¼Æ»®", new Double(10));
-		dataset.setValue(" ĞèÇóÓëÉè¼Æ", new Double(10));
-		dataset.setValue(" Ö´ĞĞ¿ØÖÆ", new Double(35));
-		dataset.setValue(" ÊÕÎ²", new Double(10));
-		dataset.setValue(" ÔËÎ¬", new Double(10));
+		dataset.setValue(" å¸‚åœºå‰æœŸ", new Double(10));
+		dataset.setValue(" ç«‹é¡¹", new Double(15));
+		dataset.setValue(" è®¡åˆ’", new Double(10));
+		dataset.setValue(" éœ€æ±‚ä¸è®¾è®¡", new Double(10));
+		dataset.setValue(" æ‰§è¡Œæ§åˆ¶", new Double(35));
+		dataset.setValue(" æ”¶å°¾", new Double(10));
+		dataset.setValue(" è¿ç»´", new Double(10));
 		return dataset;
 	}
 }
