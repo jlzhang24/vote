@@ -27,31 +27,15 @@ public class UserVerifyServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String xh = request.getParameter("xh");
 		String sfzh = request.getParameter("sfzh");
-		ResultSet rs = null;
-		if (isUserExist(xh, sfzh))
-		{
-			if(!isEvaluate(xh))
-			{
-				// 获取用户的任课信息
-				request.getSession().setAttribute("xh", xh);
-				request.getSession().setAttribute("sfzh", sfzh);
-				rs = getKcdmByXh(xh);
-				try 
-				{
-					if(rs.next())
-					{
-						request.getSession().setAttribute("rs", rs);
-						response.sendRedirect("/evaluate.jsp");
-						//request.getRequestDispatcher("/evaluate.jsp").forward(request,	response);// 页面跳转
-					}
-				} catch (SQLException e) 
-				{
-					e.printStackTrace();
-				}
-			}else
-			{
-				out.print("<script>alert('you hava evaluted!'); window.location='/login.jsp' </script>");
-			}
+		if (isUserExist(xh, sfzh)) {
+			// 获取用户的信息
+			request.getSession().setAttribute("xh", xh);
+			request.getSession().setAttribute("sfzh", sfzh);
+			response.sendRedirect("/Vote/user/wjList.jsp");
+			// request.getRequestDispatcher("/evaluate.jsp").forward(request,
+			// response);// 页面跳转
+		} else {
+			out.print("<script>alert('you hava evaluted!'); window.location='/login.jsp' </script>");
 		}
 	}
 
@@ -92,69 +76,4 @@ public class UserVerifyServlet extends HttpServlet {
 		}
 		return isExist;
 	}
-	
-	
-	/**
-	 * 根据学号获得学生的课程代码
-	 * @param xh
-	 * @return
-	 */
-	public  ResultSet getKcdmByXh(String xh)
-	{
-		String sql = "select kcdm,kcmc from xsxkb where xh=?";
-		Connection conn = null;
-		try {
-			conn = new DBConnection().getConnection();
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, xh);
-			rs = pstmt.executeQuery();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return rs;
-	}
-
-	/**
-	 * 根据学号判断学生是否已评价
-	 * @param xh
-	 * @return
-	 */
-	public boolean isEvaluate(String xh)
-	{
-		boolean flag = false;
-		String sql = "select * from pjcjb where xh=?";
-		Connection conn = null;
-		try {
-			conn = new DBConnection().getConnection();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		try
-		{
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, xh);
-			rs = pstmt.executeQuery();
-			if(rs.next())
-			{
-				flag = true;
-			}
-		}catch(Exception ex)
-		{
-			ex.printStackTrace();
-		}
-		return flag;
-	}
 }
-
-
-
