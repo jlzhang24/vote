@@ -29,6 +29,7 @@ public class UserVerifyServlet extends HttpServlet {
 		String sfzh = request.getParameter("sfzh");
 		if (isUserExist(xh, sfzh)) {
 			// 获取用户的信息
+			System.out.println("登录成功");
 			request.getSession().setAttribute("xh", xh);
 			request.getSession().setAttribute("sfzh", sfzh);
 			response.sendRedirect("/Vote/user/wjList.jsp");
