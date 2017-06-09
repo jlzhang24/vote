@@ -260,14 +260,15 @@ public class ReplayService {
 			con = db.getConnection();
 			defaultAutoCommit = con.getAutoCommit();
 			con.setAutoCommit(false);
-			sql = "insert into wj_replay(replayCode,replayIp,oid,replayTime,remark) values (?,?,?,?,?)";
+			sql = "insert into wj_replay(replayId,replayCode,replayIp,oid,replayTime,remark) values (?,?,?,?,?,?)";
 			System.out.println(sql);
 			stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			stmt.setString(1, r.getReplayCode());
-			stmt.setString(2, r.getReplayIp());
-			stmt.setInt(3, r.getoId());
-			stmt.setTimestamp(4, currentTime);
-			stmt.setString(5, r.getRemark());
+			stmt.setInt(1, replayId);
+			stmt.setString(2, r.getReplayCode());
+			stmt.setString(3, r.getReplayIp());
+			stmt.setInt(4, r.getoId());
+			stmt.setTimestamp(5, currentTime);
+			stmt.setString(6, r.getRemark());
 			
 			stmt.executeUpdate();
 			rs = stmt.getGeneratedKeys();

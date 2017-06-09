@@ -4,16 +4,16 @@ import java.sql.Timestamp;
 
 public class Replay {
 	
-	private int replayId; //回复ID
+	private String replayId; //回复ID
 	private String replayCode;//回复者代码
 	private String replayIp;//回复者IP
 	private int oId;//主题Id
 	private Timestamp replayTime;//回复时间
 	private String remark;//备注
-	public int getReplayId() {
+	public String getReplayId() {
 		return replayId;
 	}
-	public void setReplayId(int replayId) {
+	public void setReplayId(String replayId) {
 		this.replayId = replayId;
 	}
 	public String getReplayCode() {

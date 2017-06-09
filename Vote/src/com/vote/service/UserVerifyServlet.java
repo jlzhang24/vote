@@ -29,14 +29,15 @@ public class UserVerifyServlet extends HttpServlet {
 		String sfzh = request.getParameter("sfzh");
 		if (isUserExist(xh, sfzh)) {
 			// 获取用户的信息
-			System.out.println("登录成功");
+			System.out.println("login success");
 			request.getSession().setAttribute("xh", xh);
 			request.getSession().setAttribute("sfzh", sfzh);
 			response.sendRedirect("/Vote/user/wjList.jsp");
 			// request.getRequestDispatcher("/evaluate.jsp").forward(request,
 			// response);// 页面跳转
 		} else {
-			out.print("<script>alert('you hava evaluted!'); window.location='/login.jsp' </script>");
+			System.out.println("username or password is error");
+			out.print("<script>alert('username or password is error, please login again!'); window.location='/login.jsp' </script>");
 		}
 	}
 

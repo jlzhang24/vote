@@ -6,17 +6,6 @@
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <display-name>Vote</display-name>	
   
-  <!-- 学生用户登录的判断 -->
-  <servlet>
-  	<servlet-name>UserVerifyServlet</servlet-name>
-  	<servlet-class>com.vote.service.UserVerifyServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>UserVerifyServlet</servlet-name>
-  	<url-pattern>/user/UserVerifyServlet</url-pattern>
-  </servlet-mapping>
-  
-  
   <filter>
         <filter-name>CharacterEncoding</filter-name>
         <filter-class>com.vote.service.CharacterEncoding</filter-class>
