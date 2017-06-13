@@ -4,7 +4,7 @@ public class Answer {
 	
 	private int answerId;
 	
-	private int replayId;
+	private String replayId;
 	
 	private int oid;
 	
@@ -24,11 +24,11 @@ public class Answer {
 		this.answerId = answerId;
 	}
 
-	public int getReplayId() {
+	public String getReplayId() {
 		return replayId;
 	}
 
-	public void setReplayId(int replayId) {
+	public void setReplayId(String replayId) {
 		this.replayId = replayId;
 	}
 

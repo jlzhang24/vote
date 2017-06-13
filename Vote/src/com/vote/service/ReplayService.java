@@ -76,7 +76,7 @@ public class ReplayService {
 			 while(rs.next()){
 				 Answer answer = new Answer();
 				 int answerId = rs.getInt("answerId");
-				 int replayId = rs.getInt("replayId");
+				 String replayId = rs.getString("replayId");
 				 int oidd = rs.getInt("oid");
 				 int qSeqq = rs.getInt("qSeq");
 				 int seSeq = rs.getInt("seSeq");
@@ -252,7 +252,6 @@ public class ReplayService {
 		ResultSet rs=null;
 		String sql = "";
 		int count = 0;
-		int replayId = 0;
 		boolean flag = false;
 		boolean defaultAutoCommit = true;
 		Timestamp currentTime = new Timestamp(System.currentTimeMillis());
@@ -261,9 +260,8 @@ public class ReplayService {
 			defaultAutoCommit = con.getAutoCommit();
 			con.setAutoCommit(false);
 			sql = "insert into wj_replay(replayId,replayCode,replayIp,oid,replayTime,remark) values (?,?,?,?,?,?)";
-			System.out.println(sql);
 			stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			stmt.setInt(1, replayId);
+			stmt.setString(1, r.getReplayId());
 			stmt.setString(2, r.getReplayCode());
 			stmt.setString(3, r.getReplayIp());
 			stmt.setInt(4, r.getoId());
@@ -272,8 +270,6 @@ public class ReplayService {
 			
 			stmt.executeUpdate();
 			rs = stmt.getGeneratedKeys();
-			if(rs.next()) replayId = rs.getInt(1);
-			System.out.println("replayId: "+replayId);
 			
 			sql = "insert into wj_answer(replayId,oid,qSeq,seSeq,seValue,remark) values (?,?,?,?,?,?)";
 			
@@ -281,7 +277,7 @@ public class ReplayService {
 			{
 				Answer a = answers.get(i);
 				stmt = con.prepareStatement(sql);
-				stmt.setInt(1, replayId);
+				stmt.setString(1, r.getReplayId());
 				stmt.setInt(2, a.getOid());
 				stmt.setInt(3, a.getqSeq());
 				stmt.setInt(4, a.getSeSeq());
@@ -294,7 +290,6 @@ public class ReplayService {
 			con.commit();
 			con.setAutoCommit(defaultAutoCommit);
 			flag = true;
-			System.out.println("插入表[wj_answer] "+count+" 条记录");
 		} catch (Exception e) {
 			try {
 				if(con!=null){
@@ -337,8 +332,43 @@ public class ReplayService {
 		return flag;
 	}
 	
+	
 	/**
-	 * 判断是否存在回复
+	 * 判断是否存在回复，不限制IP提交策略
+	 * @param oid
+	 * @param replayId
+	 * @return
+	 */
+	public static boolean exit(int oid, String replayId) {
+		DBConnection db = new DBConnection();
+		Connection con=null;
+		Statement stm=null;
+		ResultSet rs=null;
+		String sql = "";
+		boolean falg = false;
+		int qcount = 0;
+		try {
+			con = db.getConnection();
+			stm = con.createStatement();
+			sql = "select count(*) from wj_replay r where oid="+oid;
+			if(replayId!=null&&!replayId.trim().equals("")) sql +=" and r.replayId='"+replayId+"'";
+			System.out.println(sql);
+			rs = stm.executeQuery(sql);
+			while (rs.next()) {
+				qcount = rs.getInt(1);
+			}
+			if(qcount>0) falg=true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			db.closeAll(con, stm, rs);
+		}
+		return falg;
+	}
+	
+	
+	/**
+	 * 判断是否存在回复，限制一个IP只能提交一次
 	 * @param oid
 	 * @param code
 	 * @return
